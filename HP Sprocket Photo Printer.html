@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Compra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>LG G8X ThinQ</title>
+
+
+
+<body>
+    <header>
+        <a href="Inicio.html" class="logo">
+            <img src="Logo/Logo.png" alt="Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li>TV & Entretenimiento
+                    <ul>
+                        <li><a href="Televisores.html">Televisores</a></li>
+                        <li><a href="Escritorio.html">Escritorio</a></li>
+                    </ul>
+                </li>
+                <li>Línea Blanca
+                    <ul>
+                        <li><a href="refrigeradores.html">Refrigeradores</a></li>
+                        <li><a href="lavadoras.html">Lavadoras</a></li>
+                        <li><a href="hogar.html">Hogar</a></li>
+                    </ul>
+                </li>
+                <li>Fotografía
+                    <ul>
+                        <li><a href="camaras.html">Cámaras</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li>Computación
+                    <ul>
+                        <li><a href="laptops.html">Laptops</a></li>
+                    </ul>
+                </li>
+                <li>Celulares & Tablets
+                    <ul>
+                        <li><a href="celulares.html">Celulares</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="account-cart">
+            <a href="#" id="miCuentaBtn"><i class="fas fa-user"></i> Mi cuenta</a>
+        </div>
+    </header>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar sesión / Registrarse</h2>
+            <form id="loginForm">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Iniciar sesión</button>
+                <button type="button" id="registerBtn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="producto">
+            <div class="producto-imagen">
+                <img src="Acserorios/HP Sprocket Photo Printer.jpg" alt="HP Sprocket Photo Printer">
+            </div>
+            <div class="producto-detalles">
+                <h1>HP Sprocket Photo Printer</h1>
+                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis necessitatibus eligendi repellat exercitationem, autem eos hic perspiciatis numquam in repellendus.</h2>
+                <div class="precio">
+                    <span class="precio-actual">$259.95</span>
+                    <span class="precio-anterior">$279.95</span>
+                    <span class="descuento">Ahorra $20</span>
+                </div>
+                <div class="cantidad">
+                    <label for="cantidad">Cantidad: </label>
+                    <select id="cantidad" name="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="botones">
+                    <button class="añadir-al-carrito">Añadir al carrito</button>
+                    <button class="comprar-ahora">Comprar ahora</button>
+                </div>
+                <div class="info-carrito">
+                    <p>Artículos en el carrito: <span class="carrito-cantidad">0</span></p>
+                    <p>Total: $<span class="carrito-total">0.00</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="descripcion">
+            <h3>Descripción</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi soluta laudantium sint, quidem omnis voluptatibus maxime recusandae nihil numquam optio.</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modals">
+        <div class="modal-contents">
+            <span class="close1">&times;</span>
+            <div class="checkout-container">
+                <h1>¡Compra Confirmada!</h1>
+                <p>¡Gracias por tu compra! Tu pedido ha sido realizado con éxito.</p>
+                <div class="order-details">
+                    <h2>Detalles del Pedido</h2>
+                    <ul>
+                        <li>Producto: LG G8X ThinQ</li>
+                        <li>Cantidad: <span class="modal-cantidad"></span></li>
+                        <li>Precio Unitario: $259.95</li>
+                        <li>Total: $<span class="modal-total">0.00</span></li>
+                    </ul>
+                </div>
+                <div class="additional-info">
+                    <p>Recibirás un correo electrónico de confirmación con los detalles de tu pedido.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+                const añadirAlCarritoButton = document.querySelector('.añadir-al-carrito');
+                const comprarAhoraButton = document.querySelector('.comprar-ahora');
+                const modal = document.getElementById('myModal');
+                const modalCantidad = document.querySelector('.modal-cantidad');
+                const modalTotal = document.querySelector('.modal-total');
+                const cantidadSelect = document.querySelector('#cantidad');
+                const carritoCantidadElement = document.querySelector('.carrito-cantidad');
+                const carritoTotalElement = document.querySelector('.carrito-total');
+                const closeModal = document.querySelector('.close');
+    
+                let carrito = {
+                    cantidad: 0,
+                    total: 0.00
+                };
+    
+                añadirAlCarritoButton.addEventListener('click', () => {
+                    const cantidad = parseInt(cantidadSelect.value);
+                    const precio = 259.95;
+                    carrito.cantidad += cantidad;
+                    carrito.total += precio * cantidad;
+                    actualizarInfoCarrito();
+                    alert(`Añadido ${cantidad} artículo(s) al carrito.`);
+                });
+    
+                comprarAhoraButton.addEventListener('click', () => {
+                    // Mostrar modal
+                    modal.style.display = 'block';
+                    modalCantidad.textContent = cantidadSelect.value;
+                    modalTotal.textContent = (cantidadSelect.value * 259.95).toFixed(2);
+                });
+    
+                closeModal.onclick = function() {
+                    // Cerrar modal al hacer clic en la 'X'
+                    modal.style.display = 'none';
+                };
+    
+                // Cerrar modal al hacer clic fuera de él
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                };
+    
+                function actualizarInfoCarrito() {
+                    carritoCantidadElement.textContent = carrito.cantidad;
+                    carritoTotalElement.textContent = carrito.total.toFixed(2);
+                }
+            });
+    
+        </script>
+
+</body>
+</html>

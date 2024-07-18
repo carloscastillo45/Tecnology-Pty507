@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="General.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>camaras</title>
+</head>
+<body>
+    <header>
+        <a href="Inicio.html" class="logo">
+            <img src="Logo/Logo.png" alt="Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li>TV & Entretenimiento
+                    <ul>
+                        <li><a href="Televisores.html">Televisores</a></li>
+                        <li><a href="Escritorio.html">Escritorio</a></li>
+                    </ul>
+                </li>
+                <li>Línea Blanca
+                    <ul>
+                        <li><a href="refrigeradores.html">Refrigeradores</a></li>
+                        <li><a href="lavadoras.html">Lavadoras</a></li>
+                        <li><a href="hogar.html">Hogar</a></li>
+                    </ul>
+                </li>
+                <li>Fotografía
+                    <ul>
+                        <li><a href="camaras.html">Cámaras</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li>Computación
+                    <ul>
+                        <li><a href="laptops.html">Laptops</a></li>
+                    </ul>
+                </li>
+                <li>Celulares & Tablets
+                    <ul>
+                        <li><a href="celulares.html">Celulares</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="account-cart">
+            <a href="#" id="miCuentaBtn"><i class="fas fa-user"></i> Mi cuenta</a>
+        </div>
+    </header>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar sesión / Registrarse</h2>
+            <form id="loginForm">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Iniciar sesión</button>
+                <button type="button" id="registerBtn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div class="etiqueta">
+        <h2>Camaras</h2>
+    </div>
+    
+    <div class="container">
+        <div class="product-card">
+            <img src="camara/Samsung Galaxy Camera.jpg" alt="Samsung Galaxy Camera">
+            <h3>Samsung Galaxy Camera</h3>
+            <p>sistema operativo Android Jelly Bean v4.1.2, 16.3MP CMOS con zoom óptico de 21x y pantalla táctil LCD de 4.8 pulgadas</p>
+            <p class="price">$259.95</p>
+            <a href="Samsung Galaxy Camera.html" class="btn">Ver</a>
+        </div>
+        <div class="product-card">
+            <img src="camara/CANON_3814B016.jpg" alt="Cámara Digital Canon EOS 7D - con Kit Lente 18-135 mm - Negro">
+            <h3>Cámara Digital Canon EOS 7D - con Kit Lente 18-135 mm - Negro</h3>
+            <p>Juego de cámara SLR 18 MP CMOS Negro, Estabilizador de imagen, Velocidad máxima del obturador: 1/8000 s 
+             Velocidad mínima del obturador: 30 s, Grabación de vídeo 1920 x 1080 Pixeles Full HD </p>
+            <p class="price">$359.95</p>
+            <a href="Cámara Digital Canon EOS 7D.html" class="btn">Ver</a>
+        </div>
+        
+        <div class="product-card">
+            <img src="camara/EOSR10.webp" alt="Cámara Digital Canon EOSR10 - con Kit toma de alta velocidad de 15 FPS, un sensor CMOS de 24.2 megapíxeles (APS-C) y un enfoque automático ultrarrápido, la cámara EOS R10 Lente 18-135 mm - Negro">
+            <h3>Cámara Digital Canon EOSR10 con Kit Lente 18-135 mm - Negro</h3>
+            <p>toma de alta velocidad de 15 FPS, un sensor CMOS de 24.2 megapíxeles (APS-C) y un enfoque automático ultrarrápido, la cámara EOS R10  </p>
+            <p class="price">$359.95</p>
+            <a href="Cámara Digital Canon EOSR10.html" class="btn">Ver</a>
+        </div>
+        <!-- Agregar más productos según sea necesario -->
+    </div>
+    
+    <script>
+        // Modal script
+        var modal = document.getElementById("modal");
+        var miCuentaBtn = document.getElementById("miCuentaBtn");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        miCuentaBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+       </script>
+
+</body>
+</html>

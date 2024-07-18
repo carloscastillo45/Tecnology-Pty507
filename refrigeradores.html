@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="General.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>refrigeradores</title>
+</head>
+<body>
+    <header>
+        <a href="Inicio.html" class="logo">
+            <img src="Logo/Logo.png" alt="Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li>TV & Entretenimiento
+                    <ul>
+                        <li><a href="Televisores.html">Televisores</a></li>
+                        <li><a href="Escritorio.html">Escritorio</a></li>
+                    </ul>
+                </li>
+                <li>Línea Blanca
+                    <ul>
+                        <li><a href="refrigeradores.html">Refrigeradores</a></li>
+                        <li><a href="lavadoras.html">Lavadoras</a></li>
+                        <li><a href="hogar.html">Hogar</a></li>
+                    </ul>
+                </li>
+                <li>Fotografía
+                    <ul>
+                        <li><a href="camaras.html">Cámaras</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li>Computación
+                    <ul>
+                        <li><a href="laptops.html">Laptops</a></li>
+                    </ul>
+                </li>
+                <li>Celulares & Tablets
+                    <ul>
+                        <li><a href="celulares.html">Celulares</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="account-cart">
+            <a href="#" id="miCuentaBtn"><i class="fas fa-user"></i> Mi cuenta</a>
+        </div>
+    </header>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar sesión / Registrarse</h2>
+            <form id="loginForm">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Iniciar sesión</button>
+                <button type="button" id="registerBtn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div class="etiqueta">
+        <h2>Refrigeradores</h2>
+    </div>
+
+    <div class="container">
+        <div class="product-card">
+            <img src="neveras/LG InstaView Door-in-Door Refrigerator.jpg" alt="LG InstaView Door-in-Door Refrigerator">
+            <h3>LG InstaView Door-in-Door Refrigerator</h3>
+            <p>Puerta con panel de cristal que se ilumina con dos toques, capacidad de 26 cu ft, sistema de filtración de aire, dispensador de agua y hielo.</p>
+            <p class="price">$259.95</p>
+            <a href="LG InstaView Door-in-Door Refrigerator.html" class="btn">Ver</a>
+        </div>
+        <div class="product-card">
+            <img src="neveras/Samsung French Door Refrigerator.jpg" alt="Samsung French Door Refrigerator">
+            <h3>Samsung French Door Refrigerator</h3>
+            <p>Puertas francesas, capacidad de 28 cu ft, dispensador de agua y hielo, tecnología Twin Cooling Plus, pantalla Family Hub.</p>
+            <p class="price">$506.95</p>
+            <a href="Samsung French Door Refrigerator.html" class="btn">Ver</a>
+        </div>
+        
+        <div class="product-card">
+            <img src="neveras/RF10IN81BDN.webp" alt="Sankey Refrigeradora RF10IN81BDN">
+            <h3>Sankey Refrigeradora RF10IN81BDN</h3>
+            <p>Control preciso de temperatura ajustable, Enfriamiento supremo, Luz LED interior, Estanterías de vidrio.</p>
+            <p class="price">$506.95</p>
+            <a href="Sankey Refrigeradora RF10IN81BD.html" class="btn">Ver</a>
+        </div>
+        
+        <!-- Agregar más productos según sea necesario -->
+    </div>
+    
+    <script>
+        // Modal script
+        var modal = document.getElementById("modal");
+        var miCuentaBtn = document.getElementById("miCuentaBtn");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        miCuentaBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+       </script>
+
+</body>
+</html>

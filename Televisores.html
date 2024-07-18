@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="General.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Televisores</title>
+</head>
+<body>
+    <header>
+        <a href="Inicio.html" class="logo">
+            <img src="Logo/Logo.png" alt="Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li>TV & Entretenimiento
+                    <ul>
+                        <li><a href="Televisores.html">Televisores</a></li>
+                        <li><a href="Escritorio.html">Escritorio</a></li>
+                    </ul>
+                </li>
+                <li>Línea Blanca
+                    <ul>
+                        <li><a href="refrigeradores.html">Refrigeradores</a></li>
+                        <li><a href="lavadoras.html">Lavadoras</a></li>
+                        <li><a href="hogar.html">Hogar</a></li>
+                    </ul>
+                </li>
+                <li>Fotografía
+                    <ul>
+                        <li><a href="camaras.html">Cámaras</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li>Computación
+                    <ul>
+                        <li><a href="laptops.html">Laptops</a></li>
+                    </ul>
+                </li>
+                <li>Celulares & Tablets
+                    <ul>
+                        <li><a href="celulares.html">Celulares</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="account-cart">
+            <a href="#" id="miCuentaBtn"><i class="fas fa-user"></i> Mi cuenta</a>
+        </div>
+    </header>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar sesión / Registrarse</h2>
+            <form id="loginForm">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Iniciar sesión</button>
+                <button type="button" id="registerBtn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="etiqueta">
+        <h2>Televisores</h2>
+    </div>
+
+    <div class="container">
+        <div class="product-card">
+            <img src="television/LG OLED TV.jpg" alt="LG OLED TV">
+            <h3>LG OLED TV</h3>
+            <p>Resolución 4K, tecnología OLED, Dolby Vision y Atmos, HDMI 2.1, webOS.</p>
+            <p class="price">$259.95</p>
+            <a href="LG OLED TV.html" class="btn">Ver</a>
+        </div>
+        <div class="product-card">
+            <img src="television/Samsung QLED TV 8K.png" alt="Samsung QLED TV 8K">
+            <h3>Samsung QLED TV 8K</h3>
+            <p>Resolución 8K, tecnología Quantum Dot, HDR 10+, sonido Dolby Atmos, asistente de voz integrado.</p>
+            <p class="price">$506.95</p>
+            <a href="Samsung QLED TV 8K.html" class="btn">Ver</a>
+        </div>
+        <div class="product-card">
+            <img src="television/Sankey Smart TV 4K.jpg" alt="Sankey Smart TV 4K">
+            <h3>Sankey Smart TV 4K</h3>
+            <p>Resolución 4K, HDR, sistema operativo Android TV, conectividad Wi-Fi y Bluetooth, múltiples puertos HDMI.</p>
+            <p class="price">$300.95 <span class="discount">$100.95</span></p>
+            <a href="Sankey Smart TV 4K.html" class="btn">Ver</a>
+        </div>
+        <div class="product-card">
+            <img src="television/Xiaomi Mi TV 4S.jpg" alt="Xiaomi Mi TV 4S">
+            <h3>Xiaomi Mi TV 4S</h3>
+            <p>Resolución 4K, tecnología HDR, sistema operativo Android TV, sonido Dolby DTS, control por voz.</p>
+            <p class="price">$300.95 <span class="discount">$100.95</span></p>
+            <a href="Xiaomi Mi TV 4S.html" class="btn">Ver</a>
+        </div>
+        
+        <!-- Agregar más productos según sea necesario -->
+    </div>
+    
+    <script>
+        // Modal script
+        var modal = document.getElementById("modal");
+        var miCuentaBtn = document.getElementById("miCuentaBtn");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        miCuentaBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+       </script>
+
+</body>
+</html>
